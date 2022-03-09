@@ -28,19 +28,14 @@ const Images = () => {
 	const [selected, setSelected] = useState(0)
 
   return (
-	<div className="w-1/3 h-full flex flex-col justify-center transition-all">
+	<div className="w-1/3 max-w-lg h-full flex flex-col justify-center transition-all">
 		<img src={productImages[selected].path} className="w-full object-cover object-center rounded-xl cursor-zoom-in" alt="" />
-		<div className="flex w-full  justify-between mt-10">
+		<div className="flex w-full justify-between mt-10">
 			{
 				productImages.map(img => 
 					<div  key={img.id}  className="relative" onClick={() => setSelected(img.id)}>
-						{selected === img.id && 
-							<div className="absolute inset-0.5 bg-white/50 z-10 rounded-md" />
-						}
-						<img src={img.cover} alt=""
-						className={`w-16 h-16 object-cover object-center z-0 rounded-lg cursor-pointer 
-							${selected === img.id ? "border-2 border-My_orange " : ""}`}
-						/>
+						<div className={`absolute inset-0 hover:bg-white/50 z-10 rounded-md ${selected === img.id && "bg-white/50 border-2 border-My_orange"}`} />
+						<img src={img.cover} alt="" className="w-16 h-16 object-cover object-center z-0 rounded-lg cursor-pointer"/>
 					</div>
 				)
 			}

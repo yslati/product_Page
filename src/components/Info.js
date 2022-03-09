@@ -9,7 +9,7 @@ const Info = () => {
 	}
 
   return (
-	<div className="w-1/3 h-full flex flex-col justify-center transition-all">
+	<div className="w-1/3 max-w-lg h-full flex flex-col justify-center transition-all">
 		<h2 className="text-My_orange tracking-widest text-sm font-bold">
 			SNEAKER COMPANY
 		</h2>
