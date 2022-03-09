@@ -4,7 +4,7 @@ import { ShoppingCartIcon } from '@heroicons/react/outline'
 
 const Navbar = () => {
   return (
-	<div className="w-4/5 py-7 mx-auto flex flex-none items-center select-none transition-all text-My_gray border-b">
+	<div className="md:w-4/5 w-full md:py-7 py-3 mx-auto flex flex-none items-center select-none transition-all text-My_gray border-b overflow-hidden">
 		<Link to="/">
 			<img src="./images/logo.svg" alt="" />
 		</Link>

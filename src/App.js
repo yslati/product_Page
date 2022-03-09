@@ -7,7 +7,7 @@ const App = () => {
   return (
     <div className="w-screen h-screen flex flex-col">
       <Navbar />
-      <div className="flex flex-grow w-screen h-full py-20 justify-evenly ">
+      <div className="flex flex-grow md:flex-row flex-col w-screen md:h-full md:py-20 justify-evenly ">
         <Images />
         <Info />
       </div>
