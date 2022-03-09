@@ -29,11 +29,11 @@ const Images = () => {
 	const [selected, setSelected] = useState(0)
 
 	const toRight = (e) => {
-		selected >= 0 && setSelected(selected + 1)
+		selected < productImages.length - 1 ? setSelected(selected + 1) : setSelected(0)
 	}
 	
 	const toLeft = (e) => {
-		selected < productImages.length &&setSelected(selected - 1)
+		selected > 0 ? setSelected(selected - 1) : setSelected(productImages.length - 1)
 	}
 
 	return (
@@ -43,7 +43,7 @@ const Images = () => {
 				<ChevronRightIcon onClick={() => toRight()} className="w-9 h-9 bg-white p-1 rounded-full " />
 			</div>
 			<img src={productImages[selected].path} alt="" 
-				className="w-full h-64 object-cover object-center md:rounded-xl md:cursor-zoom-in"
+				className="w-full md:h-auto h-64 object-cover object-center md:rounded-xl md:cursor-zoom-in"
 			/>
 			<div className="flex w-full justify-between mt-10">
 				{
