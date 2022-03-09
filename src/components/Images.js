@@ -28,12 +28,20 @@ const Images = () => {
 	const [selected, setSelected] = useState(0)
 
   return (
-	<div className="w-1/3 h-full flex flex-col justify-center">
-		<img src={productImages[0].path} className="w-full object-cover object-center rounded-xl" alt="" />
-		<div className="flex w-full justify-between mt-10">
+	<div className="w-1/3 h-full flex flex-col justify-center transition-all">
+		<img src={productImages[selected].path} className="w-full object-cover object-center rounded-xl cursor-zoom-in" alt="" />
+		<div className="flex w-full  justify-between mt-10">
 			{
 				productImages.map(img => 
-					<img src={img.cover} className="w-16 h-16 object-cover object-center rounded-lg" alt="" />
+					<div  key={img.id}  className="relative" onClick={() => setSelected(img.id)}>
+						{selected === img.id && 
+							<div className="absolute inset-0.5 bg-white/50 z-10 rounded-md" />
+						}
+						<img src={img.cover} alt=""
+						className={`w-16 h-16 object-cover object-center z-0 rounded-lg cursor-pointer 
+							${selected === img.id ? "border-2 border-My_orange " : ""}`}
+						/>
+					</div>
 				)
 			}
 		</div>
